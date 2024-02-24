@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     <main className=" w-full text-[#011f4b] ">
       {/* page 1 */}
       <div className="bg-[#b3cde0] flex flex-col justify-start items-center text-center h-[700px] md:h-[900px] lg:h-screen lg:px-[8rem] relative overflow-hidden ">
-        <div className="absolute top-[80%] left-[50%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#011f4b] transform -translate-x-[50%] -translate-y-[50%] rotate-[-8deg] opacity-[80%] rounded-full"></div>
+        <div className="absolute top-[80%] left-[50%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[450px] lg:h-[450px] bg-[#011f4b] transform -translate-x-[50%] -translate-y-[50%] rotate-[-8deg] opacity-[80%] rounded-full"></div>
         <div className='my-8 md:self-center'>
           <p className="text-[4rem] md:text-[6rem] lg:text-[5rem] font-serif lg:font-extrabold font-bold md:tracking-wide">DIMAS ALDIO</p>
           <div>
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
             <p className="md:text-[4rem] text-[3rem] italic font-sans lg:font-semibold z-10">PORTFOLIO</p>
           </div>
         </div>
-        <div className="w-[400px] md:w-[600px] lg:w-[550px] h-auto absolute bottom-0">
+        <div className="w-[350px] md:w-[550px] lg:w-[450px] h-auto absolute -bottom-20 md:-bottom-40 lg:-bottom-40">
           <Image src="/images/dimas.png" className='w-full' alt="dimas" width={800} height={800} />
         </div>
       </div>

@@ -31,7 +31,7 @@ const MyModal: React.FC<ModalProps> = ({ open, onCancel, image, title, descripti
             <Paragraph className='my-8'>
                 {description}
                 <p>I worked as a {part} in this project.</p>
-                <p>This project <span className='font-semibold'>{purpose}</span>.</p>
+                <p>This project <span className='font-semibold'>{purpose}</span></p>
                 <p>This project utilized a modern tech stack of {technology}.</p>
             </Paragraph>
         </Modal>
