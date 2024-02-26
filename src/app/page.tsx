@@ -41,7 +41,7 @@ const Home: React.FC = () => {
             <p className="md:text-[4rem] text-[3rem] italic font-sans lg:font-semibold z-10">PORTFOLIO</p>
           </div>
         </div>
-        <div className="w-[350px] md:w-[550px] lg:w-[450px] h-auto absolute -bottom-20 md:-bottom-40 lg:-bottom-40">
+        <div className="w-[320px] md:w-[500px] lg:w-[450px] h-auto absolute -bottom-20 md:-bottom-40 lg:-bottom-40">
           <Image src="/images/dimas.png" className='w-full' alt="dimas" width={800} height={800} />
         </div>
       </div>
