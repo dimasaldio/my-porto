@@ -3,41 +3,68 @@ import { Card, Tag } from 'antd';
 import Image from 'next/image';
 
 interface CardProps {
-    title: string;
-    image: string;
-    link?: string;
-    tech: string[];
-    part?: string;
-    handleClick: () => void;
+  title: string;
+  image: string;
+  link?: string;
+  tech: string[];
+  part?: string;
+  handleClick: () => void;
 }
 
-const CardComponent: React.FC<CardProps> = ({ title, image, link, tech, part, handleClick }) => {
-    const renderTitle = () => {
-        if (!link) {
-            return <p className="text-[1rem] font-semibold md-pt-8 py-4">{title} - <span className='font-light'>{part}</span></p>;
-        }
-
-        return (
-            <div className='md-pt-8 py-4'>
-                <a href={link} target='_blank' className="text-[1rem] font-semibold">{title} - <span className='font-light'>{part}</span></a>
-            </div>
-        );
-    };
-
+const CardComponent: React.FC<CardProps> = ({
+  title,
+  image,
+  link,
+  tech,
+  part,
+  handleClick,
+}) => {
+  const renderTitle = () => {
     return (
-        <Card
-            className='lg:w-[400px] overflow-hidden rounded-lg'
-            hoverable
-        >
-            <Image alt={title} className='w-full' src={image} width={300} height={300} onClick={handleClick} style={{cursor:'pointer'}} />
-            {renderTitle()}
-            <div className='flex items-center text-center justify-center font-light w-full'>
-                {tech.map((t, index) => (
-                    <Tag key={index} color='blue'>{t}</Tag>
-                ))}
-            </div>
-        </Card>
-    )
+      <div className='pt-4 pb-4'>
+        {link ? (
+          <a
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-[1rem] font-semibold hover:underline'
+          >
+            {title}
+          </a>
+        ) : (
+          <p className='text-[1rem] font-semibold'>{title}</p>
+        )}
+        {part && <p className='text-sm text-gray-500'>{part}</p>}
+      </div>
+    );
+  };
+
+  return (
+    <Card className='w-full max-w-[400px] rounded-xl shadow-md overflow-hidden' hoverable>
+        <div className="flex justify-center" onClick={handleClick} style={{ cursor: 'pointer' }}>
+  <Image
+    alt={title}
+    src={image}
+    width={300}
+    height={300}
+    className="rounded-t-md"
+  />
+</div>
+
+      <div className='p-4'>
+        {renderTitle()}
+
+<div className="flex flex-wrap justify-center gap-2 mt-3 break-words">
+  {tech.map((t, index) => (
+    <Tag key={index} color="blue" className="max-w-full truncate">
+      {t}
+    </Tag>
+  ))}
+</div>
+
+      </div>
+    </Card>
+  );
 };
 
 export default CardComponent;
