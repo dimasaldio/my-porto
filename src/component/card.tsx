@@ -41,7 +41,15 @@ const CardComponent: React.FC<CardProps> = ({
 
   return (
     <Card className='w-full max-w-[400px] rounded-xl shadow-md overflow-hidden' hoverable>
-        <div className="flex justify-center" onClick={handleClick} style={{ cursor: 'pointer' }}>
+
+<div
+  className="flex justify-center"
+  onClick={handleClick}
+  style={{ cursor: 'pointer' }}
+  role="button"
+  tabIndex={0}
+  onKeyDown={(e) => e.key === 'Enter' && handleClick()}
+>
   <Image
     alt={title}
     src={image}
